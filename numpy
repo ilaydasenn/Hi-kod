@@ -3,6 +3,8 @@
 Oluşturulan arrayin boyut, eleman sayısı bilgilerine bakalım.
 import numpy as np 
 array1 = np.array([1,2,3,4,5], dtype= int )
+np.ndim(array1)
+np.size(array1)
 ##### 2. Aşağıda verilen iki boyutlu ve üç boyutlu arrayi oluşturalım. Bu arraylerin boyut, eleman sayısı, satır, sütun bilgilerine ulaşalım. 
 
 İki boyutlu array:
