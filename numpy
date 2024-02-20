@@ -43,10 +43,8 @@ array3[0,1,:5]
 #Üç boyutlu arraydaki 6,20 elemanlarına ulaşalım
 array3[1,0,1:3]
 
-##### 5. 5 ```
-satır
-``` 3 sütunluk sıfırlardan ve birlerden oluşan iki tane iki boyutlu array oluşturalım. Bu arrayleri satır ve sütun bazında birleştirelim.
-a=np.ones((2,3), dtype = "int")
-b=np.zeros((2,3), dtype ="int")
+##### 5. 5 satır 3 sütunluk sıfırlardan ve birlerden oluşan iki tane iki boyutlu array oluşturalım. Bu arrayleri satır ve sütun bazında birleştirelim.
+a=np.ones((3,4), dtype = "int")
+b=np.zeros((3,4), dtype ="int")
 np.concatenate([a,b])
 
