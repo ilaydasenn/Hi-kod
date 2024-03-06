@@ -1,0 +1,53 @@
+sozluk = {"Kategori": ["Giyim","Giyim", "Ayakkabı","Aksesuar","Ayakkabı","Giyim","Aksesuar","Aksesuar","Ayakkabı","Giyim"],
+         "Ürün" : ["Kazak","T-shirt","Sandalet","Küpe","Spor Ayakkabı","Pantolon","Kolye","Yüzük","Çizme","Ceket"],
+         "Fiyat" : [300,180,450,50,700,400,150,80,850,900]}
+         
+#1. Yukarıdaki sözlüğü bir DataFrame haline getirin.
+         import pandas as pd
+sozluk = {"Kategori": ["Giyim","Giyim", "Ayakkabı","Aksesuar","Ayakkabı","Giyim","Aksesuar","Aksesuar","Ayakkabı","Giyim"],
+         "Ürün" : ["Kazak","T-shirt","Sandalet","Küpe","Spor Ayakkabı","Pantolon","Kolye","Yüzük","Çizme","Ceket"],
+         "Fiyat" : [300,180,450,50,700,400,150,80,850,900]}
+yeni_sozluk = pd.DataFrame(sozluk)
+yeni_sozluk
+
+
+# 2. Aşağıdaki işlemleri dataframe üzerinde uygulayalım.
+- 2.indexde bulunan kategoriyi bulalım (Sadece kategori bilgisi) 
+- 2.indexde bulunan ürünü bulalım (Sadece ürün bilgisi)
+- 4.indexden 9.indexe kadar olan verileri bulalım (Kategori,ürün,fiyat bilgisi beraber)
+- 1.indexden 6.indexe kadar olan ürünleri bulalım (Sadece ürün bilgisi)
+
+kategori2 = yeni_sozluk.loc[2, "Kategori"]
+print( kategori2)
+urun2 = yeni_sozluk.loc[2, "Ürün"]
+print(urun2)
+veriler= yeni_sozluk.loc[4:9]
+print(veriler)
+urunler = yeni_sozluk.loc[1:6, "Ürün"]
+print( urunler)
+
+
+# 3. Aşağıdaki işlemleri dataframe üzerinde uygulayalım.
+- Giyim kategorisinde bulunan ürünleri gösterin
+- Ayakkabı kategorisinde bulunan ürünleri gösterin
+- Aksesuar kategorisinde bulunan ürünleri gösterin
+
+giyim= yeni_sozluk[yeni_sozluk["Kategori"] == "Giyim"]["Ürün"]
+print(giyim)
+ayakkabi= yeni_sozluk[yeni_sozluk["Kategori"] == "Ayakkabı"]["Ürün"]
+print(ayakkabi)
+aksesuar = yeni_sozluk[yeni_sozluk["Kategori"] == "Aksesuar"]["Ürün"]
+print(aksesuar)
+
+
+# 4 Aşağıdaki işlemleri dataframe üzerinde uygulayalım.
+- Giyim kategorisinde fiyatı 300'den fazla olan ürünleri gösterin
+- Ayakkabı kategorisinde fiyatı 600'den az olan ürünleri gösterin
+- Aksesuar kategorisinde fiyatı 100'den fazla olan aksesuarı gösterin
+
+giyim_fiyat = yeni_sozluk[(yeni_sozluk["Kategori"] == "Giyim") & (yeni_sozluk["Fiyat"] > 300)]["Ürün"]
+print(giyim_fiyat)
+ayakkabi_fiyat= yeni_sozluk[(yeni_sozluk["Kategori"] == "Ayakkabı") & (yeni_sozluk["Fiyat"] < 600)]["Ürün"]
+print(ayakkabi_fiyat)
+aksesuar_fiyat= yeni_sozluk[(yeni_sozluk["Kategori"] == "Aksesuar") & (yeni_sozluk["Fiyat"] > 100)]["Ürün"]
+print(aksesuar_fiyat)
