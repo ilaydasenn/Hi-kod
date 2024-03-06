@@ -31,3 +31,9 @@ for eleman in liste:
         yeni_liste.append(eleman)
 
 print(yeni_liste)
+
+meyveler = ["elma", "armut", "muz", "çilek"]
+
+for index, meyve in enumerate(meyveler):
+    print("{}. indexte bulunan meyve: {}".format(index, meyve))
+
