@@ -1,0 +1,72 @@
+#Kullanıcıdan maaş bilgisini istenir ve bu bilgiye göre maaşından ne kadar vergi kesileceğini hesaplanır. Kullanıcının geliri;
+ 10000 ve altındaysa maaşından %5 kesinti olur. 
+ 25000 ve altındaysa maaşından %10 kesinti olur. 
+ 45000 ve altındaysa maaşından %25 kesinti olur. 
+ Diğer koşullarda %30 kesinti olur. 
+Bu durumlara göre kullanıcının yeni maaşı yazdırılır.
+
+def vergi_kesintisi(maas):
+    if maas <= 10000:
+        kesinti_orani = 0.05
+    elif maas <= 25000:
+        kesinti_orani = 0.1
+    elif maas <= 45000:
+        kesinti_orani = 0.25
+    else:
+        kesinti_orani = 0.3
+
+    kesinti_miktari = maas * kesinti_orani
+    yeni_maas = maas - kesinti_miktari
+    return yeni_maas
+
+maas = float(input("Maaşınızı girin: "))
+yeni_maas = vergi_kesintisi(maas)
+print(yeni_maas)
+
+# Kullanıcıdan kullanıcı adı ve şifre oluşturmasını istenir. Şifrenin uzunluğu altı haneye ulaşmışsa hesabınız oluşturuldu mesajı alınır, altı haneden azsa altı haneli şifre oluşturması gerektiğinin mesajı alınır. (Sadece koşul kullanılması yeterli.)
+kullanici_adi = input("Kullanıcı adınızı girin: ")
+sifre = input("Şifreyi girin: ")
+
+if len(sifre) >= 6:
+    print("Hesabınız oluşturuldu .")
+else:
+    print("Altı haneli şifre oluşturmanız gerekmektedir")
+
+# Bir önceki örnek geliştirilir.
+ Kullanıcı girdiği şifre 5 ve 10 hane arasında olmak zorunda. 
+ Eğer bu koşula uyuyorsa "Hesabınız oluşturuldu." mesajı alır. 
+ Koşulu sağlamıyorsa "Lütfen girdiniz şifre 5 haneden az 10 haneden fazla olmasın!" uyarısı alır. 
+ Bunu oluştururken kullanıcı istediğimiz şartlarda şifre oluşturana kadar sormaya devam eder 
+
+while True:
+    kullanici_adi = input("Kullanıcı adınızı girin: ")
+    sifre = input("Şifrenizi girin: ")
+
+    if 5 <= len(sifre) <= 10:
+        print("Hesabınız oluşturuldu.")
+        break
+    else:
+        print("Lütfen girdiğiniz şifre 5 haneden az, 10 haneden fazla olmasın!")
+#Kullanıcıdan isim ve şifre isteyeceğiz ve şifre girişi için üç hak verilir.
+ Eğer önceden tanımlı şifre ile kullanıcıdan gelen şifre aynıysa "Giriş yapıldı." yazar. 
+ Şifre girişi yanlışsa "Yanlış şifre girildi!" uyarısı verilsin ve üç yanlış denemede program biter. 
+ Tercihe göre kalan hak bilgisi verilir. 
+
+kullanici_adi = input("Kullanıcı adınızı girin: ")
+dogru_sifre = "gizli123"
+hak_sayisi = 3
+
+while hak_sayisi > 0:
+    sifre = input("Şifrenizi girin: ")
+    if sifre == dogru_sifre:
+        print("Giriş yapıldı.")
+        break
+    else:
+        hak_sayisi -= 1
+        if hak_sayisi == 0:
+            print("Üzgünüz, üç kez yanlış şifre girdiniz. Program sonlandırılıyor.")
+            break
+        else:
+            print("Yanlış şifre girildi! Kalan hakkınız:", hak_sayisi)
+
+
