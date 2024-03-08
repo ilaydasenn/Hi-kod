@@ -1,0 +1,98 @@
+#1
+x = 3
+x = float(x)
+print(type(x))
+
+y = 4.5
+y = int(y)
+print(type(y))
+
+z = "8"
+z = int(z)
+print(type(z))
+
+a = float(a)
+print(type(a))
+
+b = "46.8"
+b = int(float(b))
+print(type(b))
+
+#2
+
+x = 3
+y = 4.5
+z = "8"
+a = "12"
+b = "46.8"
+
+x = float(x)
+print(type(x))
+
+y = int(y)
+print(type(y))
+
+z = int(z)
+print(type(z))
+
+a = float(a)
+print(type(a))
+
+b = int(float(b))
+print(type(b))
+
+ali_yas = 25
+veli_yas = 30
+ayse_yas = 27
+
+if (ali_yas < veli_yas) and (ali_yas < ayse_yas):
+    print("Ali, Veli'den ve Ayşe'den küçüktür.")
+elif (veli_yas < ali_yas) and (veli_yas < ayse_yas):
+    print("Veli, Ali'den ve Ayşe'den küçüktür.")
+else:
+    print("Ayşe, Ali'den ve Veli'den küçüktür.")
+
+  #3
+sayi1 = float(input("İlk sayıyı girin: "))
+sayi2 = float(input("İkinci sayıyı girin: "))
+
+toplam = sayi1 + sayi2
+print("Toplama sonucu:", toplam)
+
+fark = sayi1 - sayi2
+print(fark)
+
+carpim = sayi1 * sayi2
+print(carpim)
+
+if sayi2 != 0:
+    bolum = sayi1 / sayi2
+    print(bolum)
+else:
+    print("Bir sayıyı sıfıra bölemezsiniz!")
+#4
+isim = input("İsminiz nedir? ")
+yas = input("Yaşınız kaç? ")
+sehir = input("Hangi şehirde yaşıyorsunuz? ")
+meslek = input("Mesleğiniz nedir? ")
+
+print(isim)
+print(yas)
+print(sehir)
+print(meslek)
+
+#5
+ifade = "Hi-Kod Veri Bilimi Atölyesi"
+
+büyük_ifade = ifade.upper()
+print(büyük_ifade)
+
+küçük_ifade = ifade.lower()
+print(küçük_ifade)
+
+çift_sayılar = "02468"
+tek_sayılar = "13579"
+print(çift_sayılar)
+print(tek_sayılar)
+
+
